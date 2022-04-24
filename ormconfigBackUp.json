@@ -1,0 +1,31 @@
+{
+    "type": "mysql",
+    "replication": {
+        "master": {
+            "host": "localhost",
+            "port": 3306,
+            "username": "root",
+            "password": "",
+            "database": "tg_node"
+        },
+        "slaves": [
+            {
+                "host": "localhost",
+                "port": 3306,
+                "username": "root",
+                "password": "",
+                "database": "tg_node"
+            }
+        ]
+    },
+    "synchronize": true,
+    "logging": false,
+    "entities": ["src/models/**/*.{ts,js}"],
+    "migrations": ["src/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
+    "cli": {
+        "modelsDir": "src/models",
+        "migrationsDir": "src/migration",
+        "subscribersDir": "src/subscriber"
+    }
+}
